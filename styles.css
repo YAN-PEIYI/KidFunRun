@@ -1,0 +1,478 @@
+body {
+  margin: 0;
+  font-family: "Arial", sans-serif;
+  background-color: #ffffff;
+}
+
+::selection {
+  background: #3a86ff;
+  color: #fff; /* 可選，設定選取文字的顏色 */
+}
+
+.section-header {
+  text-align: center;
+  margin: 40px 0 20px;
+}
+
+.divider {
+  border: none;
+  height: 4px;
+  width: 80px;
+  background: #b2c3df;
+  margin: 0 auto 30px auto;
+  border-radius: 2px;
+}
+
+
+.page-title {
+  font-family: 'Gen Jyuu Gothic', 'Noto Sans TC', sans-serif;
+  font-size: 3rem;
+  text-align: center;
+  color: #3a86ff;
+  margin: 30px 0;
+  animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.subtitle {
+  font-family: 'Noto Sans TC', sans-serif;
+  font-size: 1.2rem;
+  color: #555;
+  margin-top: 8px;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeUp 1s ease-out forwards;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.info-item h3 {
+  font-family: 'Gen Jyuu Gothic', 'Noto Sans TC', sans-serif;
+  font-size: 20px;
+  color: #83e4ff;
+  margin-bottom: 10px;
+}
+
+.info-item p {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.5;
+  text-align: left;
+}
+
+.en-title {
+  font-family: 'Gen Jyuu Gothic', 'Noto Sans TC', sans-serif;
+  font-size: 16px;
+  color: #666;
+  font-weight: normal;
+}
+
+.en-text {
+  font-size: 0.95em;
+  color: #555;
+  display: block;
+  margin-top: 4px;
+}
+
+
+/* RWD 響應式調整 */
+@media (max-width: 768px) {
+  .info-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.schedule-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding: 1rem;
+}
+
+.schedule-card {
+  background: #f9feff;
+  border: 2px solid #3a86ff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  padding: 1rem 1.25rem;
+}
+
+.schedule-card .time {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #3a86ff;
+  margin-bottom: 0.5rem;
+}
+
+.schedule-card .activity {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+
+.schedule-card .details {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.schedule-card .en-text {
+  display: block;
+  font-size: 0.85rem;
+  color: #999;
+}
+
+
+
+.logo-container {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto 10% auto;
+}
+
+.map-container {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.map-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.image-button {
+  width: 10%; /* 根據圖片大小調整 */
+  height: auto;
+  position: absolute;
+}
+
+.map-point {
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #3a86ff;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  border: 2px solid #fff;
+  transition: transform 0.2s;
+  justify-content: center;
+  text-align: center;
+  padding: 0;
+ 
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(52, 152, 219, 0.7);
+  }
+  70% {
+    transform: scale(1.1);
+    box-shadow: 0 0 0 10px rgba(52, 152, 219, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(52, 152, 219, 0);
+  }
+}
+
+.play-button {
+  font-size: 18px;
+  background-color: #3498db; /* 藍色 */
+  animation: pulse 2s infinite;
+  transition: transform 0.2s;
+  justify-content: center;
+  text-align: center;
+  padding: 0;
+}
+
+.play-button:hover {
+  transform: scale(1.2);
+}
+
+
+.map-point[data-point="2"],
+.map-point[data-point="11"] {
+  background-color: #ff006e;
+}
+
+.map-point[data-point="1"] {
+  background-color: #ffbe0b;
+}
+
+.map-point[data-point="video"] {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #3a86ff;
+
+}
+
+
+
+.map-point:hover {
+  transform: scale(1.2);
+}
+
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup iframe {
+  width: 100%;
+  height: 200px;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+
+.popup.hidden {
+  display: none;
+}
+
+.popup-content {
+  background-color: #fff;
+  padding: 20px;
+  max-width: 400px;
+  width: 90%;
+  border-radius: 12px;
+  text-align: center;
+  position: relative;
+}
+
+.popup-close {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.popup-img {
+  width: 100%;
+  height: auto;
+  margin-top: 10px;
+  border-radius: 8px;
+}
+
+.map-point::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0,0,0,0.75);
+  color: white;
+  padding: 4px 8px;
+  font-size: 12px;
+  white-space: nowrap;
+  border-radius: 4px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 10;
+}
+
+/* Tooltip arrow */
+.map-point::before {
+  content: "";
+  position: absolute;
+  bottom: 110%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 5px solid transparent;
+  border-top-color: rgba(0,0,0,0.75);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 10;
+}
+
+/* Show on hover */
+.map-point:hover::after,
+.map-point:hover::before {
+  opacity: 1;
+}
+
+.site-footer {
+  background-color: #f8f8f8;
+  padding: 20px 10px;
+  text-align: center;
+  font-size: 14px;
+  color: #555;
+  border-top: 1px solid #ddd;
+  margin-top: 60px;
+}
+
+.footer-content p {
+  margin: 5px 0;
+}
+
+/* 可以加一點淡入動畫（可選） */
+.site-footer {
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+@media (max-width: 600px) {
+  .map-point {
+    width: 20px;
+    height: 20px;
+    font-size: 8px;
+  }
+  .popup-content {
+    padding: 15px;
+  }
+  .play-button {
+    font-size: 12px;
+    background-color: #3a86ff; 
+  }
+
+  .map-point[data-point="video"] {
+    width: 30px;
+    height: 30px;
+  
+  }
+
+  .page-title {
+    font-size: 2rem;
+
+}
+.subtitle {
+  font-size: 0.9rem;
+}
+}
+
+.cloud-banner {
+  position: relative;
+  height: 150px;
+  background: linear-gradient(to bottom, #9ff1ff, #ffffff);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.clouds {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.cloud {
+  position: absolute;
+  width: 200px;
+  opacity: 0.8;
+  animation: float 4s ease-in-out infinite alternate;
+}
+
+/* 雲1：高一點，先出現 */
+.cloud1 {
+  left: 20%;
+  top: -80px;
+  animation: slideDown1 1.5s ease-out forwards, float 4s ease-in-out infinite alternate;
+}
+
+/* 雲2：低一點，延遲滑下來 */
+.cloud2 {
+  left: 60%;
+  top: -120px;
+  animation: slideDown2 2s ease-out forwards, float 4s ease-in-out infinite alternate;
+}
+
+/* 下滑動畫：不同高度差 */
+@keyframes slideDown1 {
+  from { top: -80px; opacity: 0; }
+  to { top: 30px; opacity: 1; }
+}
+@keyframes slideDown2 {
+  from { top: -120px; opacity: 0; }
+  to { top: 60px; opacity: 1; }
+}
+
+/* 左右漂浮 */
+@keyframes float {
+  from { transform: translateX(0); }
+  to { transform: translateX(20px); }
+}
+
+/* 🎯 手機 RWD */
+@media (max-width: 768px) {
+  .cloud-banner {
+    height: 100px;
+  }
+  .cloud {
+    width: 120px;
+  }
+
+  /* 雲朵重新定位、較小滑下距離 */
+  .cloud1 {
+    left: 10%;
+    animation: slideDownMobile1 1.5s ease-out forwards, float 4s ease-in-out infinite alternate;
+  }
+  .cloud2 {
+    left: 55%;
+    animation: slideDownMobile2 2s ease-out forwards, float 4s ease-in-out infinite alternate;
+  }
+
+  @keyframes slideDownMobile1 {
+    from { top: -60px; opacity: 0; }
+    to { top: 20px; opacity: 1; }
+  }
+
+  @keyframes slideDownMobile2 {
+    from { top: -90px; opacity: 0; }
+    to { top: 40px; opacity: 1; }
+  }
+}
